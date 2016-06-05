@@ -6,4 +6,4 @@ RemoteSystemsTempFiles
 */**/.classpath
 */**/.project
 */**/.springBeans
- 
+ .recommenders
