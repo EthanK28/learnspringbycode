@@ -29,9 +29,8 @@
 		
 <!-- /.box-body -->
 <div class="box-footer">
-	<button type="submit" class="btn btn-warnnig">Modify</button>
-	<button type="submit" class="btn btn-danger">REMOVE</button>
-	<button type="submit" class="btn btn-primary">LIST ALL</button>
+	<button type="submit" class="btn btn-primary">SAVE</button>
+	<button type="submit" class="btn btn-warning">CANCEL</button>
 </div>
 
 <script>
@@ -40,18 +39,11 @@ $(document).ready(function() {
 	console.log(formObj);
 	
 	$(".btn-warning").on("click", function() {
-		formObj.attr("action", "/board/modify");
-		formObj.attr("method", "get");
-		formObj.submit();
-	});
-	
-	$(".btn-danger").on("click", function() {
-		formObj.attr("action", "/board/remove");
-		formObj.submit();
+		self.location = "/board/listAll";
 	});
 	
 	$(".btn-primary").on("click", function() {
-		self.location = "/board/listAll";
+		formObj.submit();
 	});
 });
 
