@@ -36,7 +36,7 @@
 		order by bno desc, regdate desc
 	]]>
 	</select>
-	<select id="listCri" resultType="org.zerock.domain.BoardVO">
+	<select id="listCriteria" resultType="org.zerock.domain.BoardVO">
 	<![CDATA[
 		select
 			bno, title, writer, content, regdate, viewcnt
@@ -44,6 +44,7 @@
 			tbl_board
 		where bno > 0 
 		order by bno desc, regdate desc
+		limit #{pageStart}, #{perPageNum}
 	]]>
 	</select>
 </mapper>
