@@ -71,7 +71,8 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/modify", method = RequestMethod.POST) 
-	public String modify(BoardVO board, RedirectAttributes rttr) throws Exception {
+	public String modify(BoardVO board, 
+			RedirectAttributes rttr) throws Exception {
 		logger.info("mod post..............");
 		
 		service.modify(board);

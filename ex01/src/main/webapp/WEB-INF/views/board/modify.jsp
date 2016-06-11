@@ -6,13 +6,11 @@
 <%@include file="../include/header.jsp" %>
 
 <form role="form" method="post">
-
-
 		<div class="box-body">
 					<div class="form-group">
-				<label for="exampleInputEmail1">Title</label>
+				<label for="exampleInputEmail1">번호</label>
 				<input type="text"
-					name="title" class="form-control" value="${boardVO.bno}"
+					name="bno" class="form-control" value="${boardVO.bno}"
 					 placeholder="Enter Title" readonly="readonly">
 			</div>
 			<div class="form-group">
@@ -24,8 +22,8 @@
 			<div class="form-group">
 				<label for="exampleInputPassword1">Content</label>
 				<textarea rows="3"
-					name="content" class="form-control" value="${boardVO.content}" 
-					placeholder="Enter.." ></textarea>
+					name="content" class="form-control"  
+					placeholder="Enter.." >${boardVO.content}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Writer</label>

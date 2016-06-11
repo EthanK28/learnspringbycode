@@ -19,8 +19,8 @@
 			<div class="form-group">
 				<label for="exampleInputPassword1">Content</label>
 				<textarea rows="3"
-					name="content" class="form-control" value="${boardVO.content}" 
-					placeholder="Enter.." readonly="readonly"></textarea>
+					name="content" class="form-control"  
+					placeholder="Enter.." readonly="readonly">${boardVO.content}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Writer</label>
