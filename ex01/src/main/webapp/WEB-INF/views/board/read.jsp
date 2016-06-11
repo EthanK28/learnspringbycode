@@ -5,7 +5,7 @@
 
 <%@include file="../include/header.jsp" %>
 
-<form form="form" method="post">
+<form role="form" method="post">
 	<input type='hidden' name='bno' value="${boardVO.bno}">
 </form>
 
@@ -13,23 +13,26 @@
 			<div class="form-group">
 				<label for="exampleInputEmail1">Title</label>
 				<input type="text"
-					name="title" class="form-control" placeholder="Enter Title">
+					name="title" class="form-control" value="${boardVO.title}"
+					 placeholder="Enter Title" readonly="readonly">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Title</label>
+				<label for="exampleInputPassword1">Content</label>
 				<textarea rows="3"
-					name="content" class="form-control" placeholder="Enter.."></textarea>
+					name="content" class="form-control" value="${boardVO.content}" 
+					placeholder="Enter.." readonly="readonly"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Writer</label>
 				<input type="text"
-					name="writer" class="form-control" placeholder="Enter Writer">
+					name="writer" class="form-control" value="${boardVO.writer}" 
+					placeholder="Enter Writer" readonly="readonly">
 			</div>
 		</div>
 		
 <!-- /.box-body -->
 <div class="box-footer">
-	<button type="submit" class="btn btn-warnnig">Modify</button>
+	<button type="submit" class="btn btn-warning">Modify</button>
 	<button type="submit" class="btn btn-danger">REMOVE</button>
 	<button type="submit" class="btn btn-primary">LIST ALL</button>
 </div>

@@ -17,7 +17,7 @@
 	 </select>
  	<select id="update" 
   		resultType="org.zerock.domain.BoardVO">
-		update tbl_board set title =#{title}, content=#{content}
+		update tbl_board set title = #{title}, content= #{content}
 		where bno = #{bno}
 			
 	</select>
@@ -27,6 +27,16 @@
 	</delete>
 	
 	<select id="listAll" resultType="org.zerock.domain.BoardVO">
+	<![CDATA[
+		select
+			bno, title, writer, content, regdate, viewcnt
+		from 
+			tbl_board
+		where bno > 0 
+		order by bno desc, regdate desc
+	]]>
+	</select>
+	<select id="listCri" resultType="org.zerock.domain.BoardVO">
 	<![CDATA[
 		select
 			bno, title, writer, content, regdate, viewcnt
