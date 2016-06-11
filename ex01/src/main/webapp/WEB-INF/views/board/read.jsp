@@ -29,11 +29,33 @@
 		
 <!-- /.box-body -->
 <div class="box-footer">
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary">Modify</button>
 	<button type="submit" class="btn btn-primary">REMOVE</button>
 	<button type="submit" class="btn btn-primary">LIST ALL</button>
 </div>
 
+<script>
+$(document).ready(function() {
+	var fromObj = $("form[role='form']");
+	console.log(formObj);
+	
+	$(".btn-warning").on("click", function() {
+		formObj.attr("action", "/board/modify");
+		formObj.attr("method", "get");
+		formObj.submit();
+	});
+	
+	$(".btn-danger").on("click", function() {
+		formObj.attr("action", "/board/remove");
+		formObj.submit();
+	});
+	
+	$(".btn-primary").on("click", function() {
+		self.location = "/board/listAll";
+	});
+});
 
 
+
+</script>
 <%@include file="../include/footer.jsp" %>
