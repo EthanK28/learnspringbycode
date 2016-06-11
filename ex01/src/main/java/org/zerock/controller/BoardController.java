@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.service.BoardService;
 
 @Controller
@@ -40,11 +41,7 @@ public class BoardController {
 		return "redirect:/board/listAll";	
 	}
 	
-	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
-	public void listAll(Model model) throws Exception {
-		logger.info("show all list................");
-		model.addAttribute("list", service.listAll());
-	}
+
 	
 	@RequestMapping(value = "/read", method = RequestMethod.GET) 
 	public void read(@RequestParam("bno") int bno, Model model) throws Exception {
@@ -79,6 +76,29 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/board/listAll";
 	}
+	
+	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+	public void listAll(Model model) throws Exception {
+		logger.info("show all list................");
+		model.addAttribute("list", service.listAll());
+	}
+	
+	@RequestMapping(value = "/listCri", method = RequestMethod.GET) 
+	public void listCri( Criteria cri,
+			Model model) throws Exception {
+		logger.info("show list Page with Criteria ................ ");
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		
+	}
+	
+	@RequestMapping(value="/listPage", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception {
+		logger.info(cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+	}
+	
 	
 	
 	
